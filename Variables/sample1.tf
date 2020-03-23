@@ -26,6 +26,6 @@ variable "simple-map" {
 }
 resource "null_resource" "sample" {
   provisioner "local-exec" {
-    command = "echo -e \" String = ${var.simple-string} \n Number = ${var.simple-number} \n list value = ${var.simple-list} \n Name = ${var.simple-map}\""
+    command = "echo -e \" String = ${var.simple-string} \n Number = ${var.simple-number} \n list value = ${var.simple-list[1]} \n Name = ${var.simple-map["last-name"]}\""
   }
 }
