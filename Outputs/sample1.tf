@@ -3,5 +3,5 @@ variable "sample-var" {
 }
 
 output "Sample_var" {
-  value = "var.sample-var"
+  value = var.sample-var
 }
