@@ -10,6 +10,6 @@ variable "simple-number" {
 
 resource "null_resource" "sample" {
   provisioner "local-exec" {
-    command = "echo -e String = ${var.simple-string} \n Number = ${var.simple-number}"
+    command = "echo -e \"String = ${var.simple-string} \n Number = ${var.simple-number}\""
   }
 }
