@@ -8,7 +8,7 @@ variable "ami_id" {
 resource "aws_instance" "web" {
   ami = var.ami_id
   instance_type = "t2.micro"
-  vpc_security_group_ids = ["sg-0183b01f41709052a"]
+  vpc_security_group_ids = ["sg-0183b01f41709052a","sg-0404201bfe4db9f05"]
 
   provisioner "remote-exec" {
     connection {
