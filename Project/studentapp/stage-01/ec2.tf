@@ -20,7 +20,7 @@ resource "aws_instance" "web" {
     inline = [
       "cd /tmp",
       "git clone https://github.com/naveenthangella/SHELL-SCRIPT.git",
-      "cd /SHELL-SCRIPT/project/studentapp",
+      "cd SHELL-SCRIPT/project/studentapp",
       "sh webapp.sh"
 
     ]
