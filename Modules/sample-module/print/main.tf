@@ -5,3 +5,7 @@ resource "null_resource" "print" {
 }
 
 variable "input" {}
+
+output "value entered" {
+  value = var.input
+}
