@@ -7,12 +7,12 @@
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
-dev-init: checks
+dev-init:
 	@cd ENV/DEV
 	@git pull
 	@terraform init
 
-prod-init: checks
+prod-init:
 	@cd ENV/PROD
 	@git pull
 	@terraform init
