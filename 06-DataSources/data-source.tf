@@ -5,6 +5,6 @@ data "aws_availability_zones" "available" {
 
 }
 
-output "available" {
+output "zones" {
   value = data.aws_availability_zones.available.names
 }
