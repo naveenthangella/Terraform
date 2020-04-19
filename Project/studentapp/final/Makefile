@@ -13,8 +13,8 @@ checks:
 		echo "Role Missing to run the code"
 		exit 1
 	fi
-	@if [ -z "${AWS_DEFAULT_REGION}"]; then
-		echo "Region is missing, export the AWS_DEFAULT_REGION variable"
+	@if [ -z "${AWS_DEFAULT_REGION}" ]; then
+		echo -e "Region is missing, export the AWS_DEFAULT_REGION variable"
 		exit 1
 	fi
 dev-init: checks
