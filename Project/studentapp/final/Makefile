@@ -3,16 +3,26 @@
 .SHELL := /usr/bin/bash
 .PHONY: dev-apply dev-destroy prod-apply prod-destroy
 #VARS="variables/$(ENV)-$(REGION).tfvars"
+IAM_ROLE=$(shell curl -s http://169.254.169.254/latest/meta-data/iam/info 2>/dev/null | grep -i success)
 
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
-dev-init:
+checks:
+	@if [ -z "${IAM_ROLE}" ]; then
+		echo "Role Missing to run the code"
+		exit 1
+	fi
+	@if [ -z "${AWS_DEFAULT_REGION}"]; then
+		echo "Region is missing, export the AWS_DEFAULT_REGION variable"
+		exit 1
+	fi
+dev-init: checks
 	@cd ENV/DEV
 	@git pull
 	@terraform init
 
-prod-init:
+prod-init: checks
 	@cd ENV/PROD
 	@git pull
 	@terraform init
