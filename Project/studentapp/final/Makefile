@@ -9,15 +9,10 @@ help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 checks:
-	@if [ -z "${IAM_ROLE}" ]; then
-    	echo "Role Missing to run the code"
-    	exit 1
-    fi
-    @if [ -z "${AWS_DEFAULT_REGION}" ]; then
-    	echo -e "Region Missing, Variable AWS_DEFAULT_REGION needs to be exported"
-    	exit 1
-    fi
-
+		@if [ -z "${IAM_ROLE}" ]; then echo "Role Missing to run the code" exit 1
+		fi
+		@if [ -z "${AWS_DEFAULT_REGION}" ]; then echo -e "Region Missing, Variable AWS_DEFAULT_REGION needs to be exported" exit 1
+		fi
 dev-init: checks
 	@cd ENV/DEV
 	@git pull
