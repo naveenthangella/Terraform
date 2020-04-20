@@ -2,7 +2,7 @@ module "NETWORK" {
   source            = "../../network"
   VPC_CIDR          = var.VPC_CIDR
   DEFAULT_TAGS      = var.DEFAULT_TAGS
-  WORKSTATION_VPCID   = data.aws_vpc.vpc.WORKSTATION_VPCID
+  WORKSTATION_VPCID   = data.aws_vpc.WORKSTATION_VPCID.id
 }
 
 module "SERVER" {
@@ -16,5 +16,5 @@ module "SERVER" {
 module "sg" {
   source            = "../../sg"
   VPCID             = module.NETWORK.VPCID
-  INTERNAL_CIDR     = [var.VPC_CIDR, data.aws_vpc.vpc.cidr_block]
+  INTERNAL_CIDR     = [var.VPC_CIDR, data.aws_vpc.WORKSTATION_VPCID.cidr_block]
 }

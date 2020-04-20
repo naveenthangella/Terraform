@@ -1,3 +1,3 @@
-data "aws_vpc" "vpc" {
-  WORKSTATION_VPCID = "vpc-a50189dd"
+data "aws_vpc" "WORKSTATION_VPCID" {
+  id = "vpc-a50189dd"
 }
