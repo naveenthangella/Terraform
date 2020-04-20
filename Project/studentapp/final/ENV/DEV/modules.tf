@@ -15,5 +15,5 @@ module "SERVER" {
 module "sg" {
   source            = "../../sg"
   VPCID             = module.NETWORK.VPCID
-  INTERNAL_CIDR     = var.INTERNAL_CIDR
+  INTERNAL_CIDR = [var.VPC_CIDR, "172.31.0.0/16"]
 }
