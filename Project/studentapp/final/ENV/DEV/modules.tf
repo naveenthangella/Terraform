@@ -8,4 +8,5 @@ module "SERVER" {
   source = "../../servers"
   DEFAULT_TAGS = var.DEFAULT_TAGS
   INSTANCE_TYPE = var.INSTANCE_TYPE
+  PRIVATE_SUBNETS = var.PRIVATE_SUBNETS
 }
