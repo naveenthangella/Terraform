@@ -5,3 +5,4 @@ variable "DEFAULT_TAGS" {
 variable "PRIVATE_SUBNETS" {
   type = list
 }
+variable "ALLOW_INTERNAL_SG" {}
