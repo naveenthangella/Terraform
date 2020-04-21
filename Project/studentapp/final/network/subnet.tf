@@ -17,8 +17,14 @@ resource "aws_subnet" "PUBLIC-subnets" {
     "Name"              = "${var.DEFAULT_TAGS["PROJECT_NAME"]}-${var.DEFAULT_TAGS["ENV"]}-PUBLIC-SUBNET-${count.index+1}"
   }
 }
-resource "aws_route_table_association" "subnet-association" {
+resource "aws_route_table_association" "Private-subnet-association" {
   count                 = length(data.aws_availability_zones.available.names)
   route_table_id        = aws_route_table.PRIVATE-student-workstation.id
+  subnet_id             = element(aws_subnet.PRIVATE-subnets.*.id, count.index)
+}
+
+resource "aws_route_table_association" "Public-subnet-association" {
+  count                 = length(data.aws_availability_zones.available.names)
+  route_table_id        = aws_route_table.PUBLIC-student-workstation.id
   subnet_id             = element(aws_subnet.PRIVATE-subnets.*.id, count.index)
 }

@@ -1,13 +1,13 @@
 resource "aws_route_table" "PUBLIC-student-workstation" {
   vpc_id                    = aws_vpc.main.id
   tags                      = {
-    Name                    = "Studnet VPC to Workstation default"
+    Name                    = "Public Studnet VPC to Workstation default"
   }
 }
 resource "aws_route_table" "PRIVATE-student-workstation" {
   vpc_id                    = aws_vpc.main.id
   tags                      = {
-    Name                    = "Studnet VPC to Workstation default"
+    Name                    = "Private Studnet VPC to Workstation default"
   }
 }
 resource "aws_route" "PUBLIC-route-to-workstation" {
