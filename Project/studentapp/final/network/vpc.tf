@@ -15,3 +15,10 @@ resource "aws_vpc_peering_connection" "workstation-to-studentapp" {
   }
 }
 
+resource "aws_internet_gateway" "igw" {
+  vpc_id        = aws_vpc.main.id
+  tags          = {
+    Name        = "student vpc igw"
+  }
+}
+
