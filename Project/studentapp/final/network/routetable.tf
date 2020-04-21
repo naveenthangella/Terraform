@@ -31,7 +31,7 @@ resource "aws_route" "route-to-student" {
 }
 
 resource "aws_route" "igw-route" {
-  route_table_id            = aws_route_table.student-workstation.id
+  route_table_id            = aws_route_table.PRIVATE-student-workstation.id
   destination_cidr_block    = "0.0.0.0/0"
   gateway_id                = aws_internet_gateway.igw.id
 }
