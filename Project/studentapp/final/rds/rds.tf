@@ -17,6 +17,7 @@ resource "aws_db_instance" "rds-instance" {
   parameter_group_name    = aws_db_parameter_group.rds-parameter-group.name
   option_group_name       = aws_db_option_group.rds-option-group.name
   db_subnet_group_name    = aws_db_subnet_group.rds-subnet-group.name
+  final_snapshot_identifier = "backup"
   tags                    = {
     Name                  = "${var.DEFAULT_TAGS["PROJECT_NAME"]}-RDS"
   }
