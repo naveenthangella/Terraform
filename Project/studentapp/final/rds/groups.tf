@@ -15,7 +15,7 @@ resource "aws_db_subnet_group" "rds-subnet-group" {
 resource "aws_db_option_group" "rds-option-group" {
   name                  = lower(local.OG_RES_NAME)
   engine_name           = "mariadb"
-  major_engine_version  = "10.3"
+  major_engine_version  = "10.4"
   tags                  = {
     Name                = upper(local.OG_RES_NAME)
   }
@@ -24,7 +24,7 @@ resource "aws_db_option_group" "rds-option-group" {
 
 resource "aws_db_parameter_group" "rds-parameter-group" {
   name                  = lower(local.PG_RES_NAME)
-  family                = "mariadb10.3"
+  family                = "mariadb10.4"
   tags                  = {
     Name                = upper(local.PG_RES_NAME)
   }
