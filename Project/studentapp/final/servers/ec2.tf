@@ -23,8 +23,6 @@ resource "aws_instance" "web" {
     }
     inline = [
       "yum install ansible -y"
-
-
     ]
   }
 
