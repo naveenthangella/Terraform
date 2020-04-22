@@ -21,6 +21,11 @@ resource "aws_instance" "web" {
       user                = "root"
       password            = "DevOps321"
     }
+    inline = [
+      "yum install ansible -y"
+
+
+    ]
   }
 
 
