@@ -22,3 +22,12 @@ resource "aws_db_instance" "rds-instance" {
     Name                  = "${var.DEFAULT_TAGS["PROJECT_NAME"]}-RDS"
   }
 }
+
+resource "null_resource" "schema-setup" {
+  provisioner "local-exec" {
+    command = <<EOF
+      curl -s https://studentapi-cit.s3-us-west-2.amazonaws.com/student-rds.sql -o /tmp/schema.sql
+      mysql -h ${aws_db_instance.rds-instance.address} -ustudent -pstudent1 < /tmp/schema.sql
+    EOF
+  }
+}

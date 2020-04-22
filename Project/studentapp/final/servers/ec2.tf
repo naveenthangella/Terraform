@@ -14,4 +14,14 @@ resource "aws_instance" "web" {
   tags                   = {
     "Name"               = "${var.DEFAULT_TAGS["PROJECT_NAME"]}-${var.DEFAULT_TAGS["ENV"]}-NODE"
   }
+
+  provisioner "remote-exec" {
+    connection {
+      host                = self.private_ip
+      user                = "root"
+      password            = "DevOps321"
+    }
+  }
+
+
 }
