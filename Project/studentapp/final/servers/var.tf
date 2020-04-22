@@ -5,4 +5,4 @@ variable "DEFAULT_TAGS" {
 variable "PRIVATE_SUBNETS" {
   type = list
 }
-variable "ALLOW_INTERNAL_SG" {}
+variable "ALLOW_SSH_INTERNAL_SG" {}
