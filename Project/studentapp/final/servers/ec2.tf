@@ -22,7 +22,9 @@ resource "aws_instance" "web" {
       password            = "DevOps321"
     }
     inline = [
-      "yum install ansible -y"
+      "yum install ansible -y",
+      "echo localhost >/tmp/hosts",
+      "ansible-pull -i /tmp/hosts -U https://github.com/naveenthangella/Ansible.git Playbooks/webapp.yml"
     ]
   }
 
