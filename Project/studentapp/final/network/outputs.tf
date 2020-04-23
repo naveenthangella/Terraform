@@ -1,8 +1,9 @@
 output "PRIVATE_SUBNETS" {
-  value = aws_subnet.PRIVATE-subnets.*.id
+  value = aws_subnet.private-subnets.*.id
 }
+
 output "PUBLIC_SUBNETS" {
-  value = aws_subnet.PRIVATE-subnets.*.id
+  value = aws_subnet.public-subnets.*.id
 }
 
 output "VPCID" {

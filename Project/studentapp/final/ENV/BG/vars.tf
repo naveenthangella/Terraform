@@ -4,3 +4,4 @@ variable "DEFAULT_TAGS" {
 }
 variable "INSTANCE_TYPE" {}
 variable "INSTANCE_COUNT" {}
+variable "DEPLOYMENT" {}

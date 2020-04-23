@@ -1,3 +1,3 @@
 locals {
-  AZ_COUNT  = "${length(var.PRIVATE_SUBNETS)-2}"
+  AZ_COUNT = "${length(var.PRIVATE_SUBNETS)-2}"
 }
