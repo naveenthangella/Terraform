@@ -12,6 +12,9 @@ resource "aws_instance" "test" {
   ami           = "ami-0777ff5c030fe1d38"
   instance_type = "t2.small"
   key_name      = "devops"
+  tags          = {
+    "Name"      = "Test-Infra"
+  }
   vpc_security_group_ids = ["sg-0183b01f41709052a","sg-0404201bfe4db9f05","sg-052d4431ac57068ba"]
 
   provisioner "remote-exec" {
