@@ -2,7 +2,7 @@ variable "URL" {}
 resource "null_resource" "deploy" {
   provisioner "remote-exec" {
     connection {
-      host = self.public_ip
+      host = aws_instance.test.public_ip
       user = "root"
       password = "DevOps321"
     }
@@ -12,4 +12,10 @@ resource "null_resource" "deploy" {
     ]
   }
 }
+
+resource "local_file" "public_ip" {
+filename =  "/tmp/ip.txt"
+content = aws_instance.test.public_ip
+}
+
 
