@@ -29,5 +29,7 @@ resource "aws_instance" "test" {
       "echo localhost > /tmp/hosts",
       "ansible-pull -i /tmp/hosts -U https://github.com/naveenthangella/Ansible.git Playbooks/webapp.yml"
     ]
+
   }
+
 }
