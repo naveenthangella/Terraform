@@ -15,7 +15,7 @@ resource "aws_instance" "test" {
   tags          = {
     "Name"      = "Test-Infra"
   }
-  vpc_security_group_ids = ["sg-0183b01f41709052a","sg-0404201bfe4db9f05","sg-052d4431ac57068ba"]
+  vpc_security_group_ids = ["sg-0183b01f41709052a","sg-0404201bfe4db9f05","sg-052d4431ac57068ba","sg-0e1737254ce68c0b4"]
 
   provisioner "remote-exec" {
     connection {
