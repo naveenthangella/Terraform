@@ -38,5 +38,5 @@ module "ALB" {
 }
 
 data "aws_vpc" "default" {
-  id = "vpc-948554ed"
+  id = "vpc-a50189dd"
 }
