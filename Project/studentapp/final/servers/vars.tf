@@ -8,5 +8,5 @@ variable "PRIVATE_SUBNETS" {
 variable "ALLOW_INTERNAL_SG" {}
 variable "ALLOW_WEB_INTERNAL" {}
 variable "DBHOST" {}
-variable "INSTANCE_COUNT" {}
-variable "DEPLOYMENT" {}
+#variable "INSTANCE_COUNT" {}
+#variable "DEPLOYMENT" {}

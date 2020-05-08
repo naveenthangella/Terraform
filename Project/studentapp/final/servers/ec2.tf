@@ -4,7 +4,7 @@ resource "random_integer" "priority" {
 }
 
 resource "aws_instance" "web" {
-  count                   = var.INSTANCE_COUNT
+ # count                   = var.INSTANCE_COUNT
   ami                     = data.aws_ami.ami.image_id
   instance_type           = var.INSTANCE_TYPE
   subnet_id               = element(var.PRIVATE_SUBNETS, random_integer.priority.result)
@@ -13,7 +13,7 @@ resource "aws_instance" "web" {
   tags                    = {
         "Name"            = "${var.DEFAULT_TAGS["PROJECT_NAME"]}-${var.DEFAULT_TAGS["ENV"]}-NODE"
         "ENV"             = var.DEFAULT_TAGS["ENV"]
-        "DEPLOYMENT"      = var.DEPLOYMENT
+        #"DEPLOYMENT"      = var.DEPLOYMENT
   }
 
   provisioner "remote-exec" {

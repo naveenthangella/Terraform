@@ -1,7 +1,7 @@
-locals {
-  ALB_NAME                = "${var.DEFAULT_TAGS["PROJECT_NAME"]}-${var.DEFAULT_TAGS["ENV"]}-alb-${var.DEPLOYMENT}"
-  TG_NAME                 = "${var.DEFAULT_TAGS["PROJECT_NAME"]}-${var.DEFAULT_TAGS["ENV"]}-tg-${var.DEPLOYMENT}"
-}
+#locals {
+#  ALB_NAME                = "${var.DEFAULT_TAGS["PROJECT_NAME"]}-${var.DEFAULT_TAGS["ENV"]}-alb-${var.DEPLOYMENT}"
+#  TG_NAME                 = "${var.DEFAULT_TAGS["PROJECT_NAME"]}-${var.DEFAULT_TAGS["ENV"]}-tg-${var.DEPLOYMENT}"
+#}
 
 resource "aws_lb" "alb" {
   name                = lower(local.ALB_NAME)

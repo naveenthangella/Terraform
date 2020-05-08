@@ -10,4 +10,4 @@ variable "VPCID" {}
 variable "INSTANCEID" {
   type = list
 }
-variable "DEPLOYMENT" {}
+#variable "DEPLOYMENT" {}
