@@ -8,6 +8,6 @@ variable "PUBLIC_SUBNETS" {
 }
 variable "VPCID" {}
 variable "INSTANCEID" {
-  type = list
+ # type = list
 }
 #variable "DEPLOYMENT" {}
