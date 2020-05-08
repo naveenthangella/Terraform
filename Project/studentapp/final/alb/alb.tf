@@ -23,9 +23,9 @@ resource "aws_lb_target_group" "tg-nodes" {
 }
 
 resource "aws_lb_target_group_attachment" "instances-attach" {
-  #count            = length(var.INSTANCEID)
+  count            = length(var.INSTANCEID)
   target_group_arn = aws_lb_target_group.tg-nodes.arn
-  target_id        = var.INSTANCEID
+  target_id        = element(var.INSTANCEID,count.index)
   port             = 80
 }
 
