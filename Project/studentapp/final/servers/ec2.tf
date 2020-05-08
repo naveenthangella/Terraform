@@ -26,7 +26,7 @@ resource "aws_instance" "web" {
     inline = [
       "yum install ansible -y",
       "echo localhost >/tmp/hosts",
-      "ansible-pull -i /tmp/hosts -U https://rkb03:password@gitlab.com/devopsb43/ansible.git Playbooks/studentapp-webapp.yml -e DBUSER=student -e DBPASS=student1 -e DBNAME=studentapp -e DBHOST=${var.DBHOST}"
+      "ansible-pull -i /tmp/hosts -U https://github.com/naveenthangella/Ansible.git Playbooks/webapp.yml -e DBUSER=student -e DBPASS=student1 -e DBNAME=studentapp -e DBHOST=${var.DBHOST}"
     ]
   }
 
