@@ -4,7 +4,7 @@ resource "random_integer" "priority" {
 }
 
 resource "aws_instance" "web" {
- # count                   = var.INSTANCE_COUNT
+  count                   = var.INSTANCE_COUNT
   ami                     = data.aws_ami.ami.image_id
   instance_type           = var.INSTANCE_TYPE
   subnet_id               = element(var.PRIVATE_SUBNETS, random_integer.priority.result)
