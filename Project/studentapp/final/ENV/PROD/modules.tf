@@ -40,13 +40,13 @@ module "ALB" {
   #DEPLOYMENT                  = "blue"
 }
 
-terraform {
-  backend "s3" {
-    bucket = "terraform-state-file1"
-    key    = "project-prod-states"
-    region = "us-west-2"
-  }
-}
+#terraform {
+#  backend "s3" {
+#    bucket = "terraform-state-file1"
+#    key    = "project-prod-states"
+#    region = "us-west-2"
+#  }
+#}
 
 data "aws_vpc" "default" {
   id = "vpc-948554ed"
