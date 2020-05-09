@@ -42,7 +42,7 @@ module "ALB" {
 
 terraform {
   backend "s3" {
-    bucket = "terraform-state-file"
+    bucket = "terraform-state-file1"
     key    = "project-prod-states"
     region = "us-west-2"
   }
