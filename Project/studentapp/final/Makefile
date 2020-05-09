@@ -40,10 +40,14 @@ prod-apply: prod-init ## Create PROD environment
 	@cd ENV/PROD
 	@terraform apply -auto-approve
 
-prod-apply-bg: ## Create PROD environment
+prod-apply-bg: ## Create Blue-Green environment
 	@cd ENV/BG
 	@terraform init
 	@terraform apply -auto-approve
+
+prod-destroy-bg: ## Destroy Blue-Green environment
+	@cd ENV/BG
+	@terraform destroy -auto-approve
 
 prod-destroy: prod-init ## Destroy PROD environment
 	@cd ENV/PROD
