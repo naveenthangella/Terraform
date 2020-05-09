@@ -13,7 +13,7 @@ resource "aws_instance" "web" {
   tags                    = {
         "Name"            = "${var.DEFAULT_TAGS["PROJECT_NAME"]}-${var.DEFAULT_TAGS["ENV"]}-NODE"
         "ENV"             = var.DEFAULT_TAGS["ENV"]
-        #"DEPLOYMENT"      = var.DEPLOYMENT
+        "DEPLOYMENT"      = var.DEPLOYMENT
   }
 
   provisioner "remote-exec" {

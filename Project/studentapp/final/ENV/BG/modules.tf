@@ -25,7 +25,7 @@ module "ALB" {
 data "terraform_remote_state" "blue" {
   backend = "s3"
   config  = {
-    bucket  = "d43-terraform"
+    bucket  = "project-test-infra"
     key     = "project-prod-states"
     region  = "us-west-2"
   }
@@ -38,7 +38,7 @@ output "ALL" {
 
 terraform {
   backend "s3" {
-    bucket = "d43-terraform"
+    bucket = "project-test-infra"
     key    = "project-prod-states-green"
     region = "us-west-2"
   }

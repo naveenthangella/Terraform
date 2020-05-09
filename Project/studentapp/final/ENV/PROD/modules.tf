@@ -14,7 +14,7 @@ module "SERVERS" {
   ALLOW_WEB_INTERNAL  = module.SG.ALLOW_WEB_INTERNAL
   DBHOST              = module.RDS.DBHOST
   INSTANCE_COUNT      = var.INSTANCE_COUNT
-  #DEPLOYMENT          = "blue"
+  DEPLOYMENT          = "blue"
 }
 
 module "SG" {
@@ -37,7 +37,7 @@ module "ALB" {
   PUBLIC_SUBNETS              = module.NETWORK.PUBLIC_SUBNETS
   VPCID                       = module.NETWORK.VPCID
   INSTANCEID                  = module.SERVERS.INSTANCEID
-  #DEPLOYMENT                  = "blue"
+  DEPLOYMENT                  = "blue"
 }
 
 terraform {
